@@ -1,9 +1,10 @@
 const destinationCreator = (() => {
   let counter = 0
   return Destination = class {
-    constructor(id, address) {
+    constructor(address) {
       this.id = ++counter
       this.address = address
+      store.destinations.push(this)
     }
   }
 })()
