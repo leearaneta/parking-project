@@ -10,7 +10,10 @@
       <input id = 'destination' type = 'text'>
       <input type = 'submit'>
     </form>
+    <div id="parking-spots">
+    </div>
     <script src = "bin/jquery-3.1.0.min.js"></script>
+    <script src = "bin/handlebars.js"></script>
     <script src = "controllers/destinationsController.js"></script>
     <script src = "controllers/mapsController.js"></script>
     <script src = "controllers/parkingSpotsController.js"></script>
@@ -19,5 +22,12 @@
     <script src = "models/parkingSpot.js"></script>
     <script src = "app.js"></script>
     <script src = "store.js"></script>
+    <script id="parking-spots-template" type="text/x-handlebars-template">
+      {{#each this}}
+        <h3>{{location_name}}</h3>
+        {{address}}
+        <br>booking total: ${{price}}
+      {{/each}}
+    </script>
   </body>
 </html>
